@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Puzzle Game</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="game_name">GAME.IO</div>
+            <div id="game_cont">
+                <h2>Games: </h2>
+                <select id="pageSelect" onchange="redirectToPage()">
+                    <option value="">Select a game </option>
+                    <option value="index.html">Memory puzzle</option>
+                    <option value="mole.html">Whack-a-Mole</option>
+                    <option value="ball.html">Catch the ball</option>
+                </select>
+                
+            </div>
+            <div id="about">
+            <a href="about.html">about </a>
+            </div>
+
+            <div id="contact">
+                <a href="contact.html">contact us</a>
+            </div>
+        </nav>
+    </header>
+    <div class="game-container">
+        <div id="name">
+        <h1>Memory Puzzle Game</h1>
+    </div>
+        <div class="grid" id="game-board"></div> <br>
+        <button id="reset">Reset Game</button>
+        <div class="score" id="score"></div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        function redirectToPage() {
+            var selectElement = document.getElementById("pageSelect");
+            var selectedValue = selectElement.value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="mole.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="game_name">GAME.IO</div>
+            <div id="game_cont">
+                <h2>Games: </h2>
+                <select id="pageSelect" onchange="redirectToPage()">
+                    <option value="">-- Select a game --</option>
+                    <option value="index.html">Memory puzzle</option>
+                    <option value="mole.html">Whack-a-Mole</option>
+                    <option value="ball.html">Catch the ball</option>
+                </select>
+                
+            </div>
+
+            <div id="about">
+            <a href="about.html">about </a>
+            </div>
+
+            <div id="contact">
+                <a href="contact.html">contact us</a>
+            </div>
+        </nav>
+    </header>
+    <div class="game-container">
+        <h1>Whack-a-Mole</h1>
+        <div class="scoreboard">
+            <p>Score: <span id="score">0</span></p>
+            <p>Time Left: <span id="time">30</span> seconds</p>
+        </div>
+        <div class="grid">
+            <div class="hole" id="hole1"><div class="mole"> mole</div></div>
+            <div class="hole" id="hole2"><div class="mole"> mole</div></div>
+            <div class="hole" id="hole3"><div class="mole"> mole</div></div>
+            <div class="hole" id="hole4"><div class="mole"> mole</div></div>
+            <div class="hole" id="hole5"><div class="mole">mole </div></div>
+            <div class="hole" id="hole6"><div class="mole">mole </div></div>
+            <div class="hole" id="hole7"><div class="mole"> mole</div></div>
+            <div class="hole" id="hole8"><div class="mole">mole </div></div>
+            <div class="hole" id="hole9"><div class="mole">mole </div></div>
+        </div>
+        <button id="startBtn">Start Game</button>
+    </div>
+    <script src="mole.js">
+      
+        
+    </script>
+</body>
+</html>

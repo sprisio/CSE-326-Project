@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+   
+</head>
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+}
+nav{
+    
+    width: 100%;
+    display: flex;
+    background-color: wheat;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    border: solid;
+    margin-bottom: 20px;
+
+    
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out 0s;
+    min-width: 20%;
+    
+}
+nav a:hover{
+   
+    font-size: 20px;
+}
+#memory_puzzle{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+    height:30px;
+    padding: 5px;
+    
+}
+#wack_mole{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height:30px;
+    justify-content: center;
+    padding: 5px;
+    
+}
+#about{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height:30px;
+    justify-content: center;
+    padding: 5px;
+    
+
+}
+#contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height:30px;
+    padding: 5px;
+}
+#pageSelect{
+    position: relative;
+    top: 10px;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: solid black;
+    transition: all 0.3s ease-in-out 0s;
+
+}
+#pageSelect:hover{
+    scale: 1.07;
+    background-color: red;
+    color: white;
+}
+#game_cont{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    width: 25%;
+    border-left: solid;
+    border-right:solid ;
+    background-color: rgb(214, 225, 61);
+    height: 100%;
+    
+}
+#game_name{
+    margin: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: rgb(215, 54, 17);
+    font-size: larger;
+}
+body{
+    background-image: url(https://wallpapercave.com/wp/wp4546018.jpg);
+    background-position: center;
+   
+}
+#container{
+    border: solid;
+    height: 515px;
+    width: 50%;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding-top: 0px;
+   background-color: antiquewhite;
+   border-radius: 12px;
+   position: relative;
+   top: 70px;
+   
+}
+h1{
+    text-align: left;
+    text-transform: uppercase;
+    font-size:25px;
+}
+input,select,textarea,label{
+    float: left;
+    text-transform: capitalize;
+    
+}
+p{
+    text-align: left;
+}
+input,select,textarea{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+textarea{
+    height: 60px;
+}
+button{
+    width: 100%;
+    height: 35px;
+    background-color: red;
+    color: white;
+    transition: all 0.5s ease-in-out 0s ;
+    border-radius: 5px;
+}
+button:hover{
+    color: black;
+    background-color: greenyellow;
+    scale: 1.04;
+    
+}
+
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div id="game_name">GAME.IO</div>
+            <div id="game_cont">
+                <h2>Games: </h2>
+                <select id="pageSelect" onchange="redirectToPage()">
+                    <option value="">Select a game </option>
+                    <option value="index.html">Memory puzzle</option>
+                    <option value="mole.html">Whack-a-Mole</option>
+                    <option value="ball.html">Catch the ball</option>
+                </select>
+                
+            </div>
+            <div id="about">
+            <a href="about.html">about</a>
+            </div>
+
+            <div id="contact">
+                <a href="contact.html">contact us</a>
+            </div>
+        </nav>
+    </header>
+    <center>
+        <div id="container">
+            <form >
+                <h1>Contact us</h1>
+                <label for="name">name</label> <br>
+                <input type="text" placeholder="Enter your name here"> <br> <br>
+                <label for="email" >email</label><br>
+                <input type="email" placeholder="Enter your email here"> <br><br>
+                <label for="password">password</label><br>
+                <input type="password" placeholder="Enter your password here"><br><br>
+                <label for="gender">gender</label><br>
+                <select name="gender" id="gender">
+                    <option value="select">select</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select><br><br>
+                <label for="bio">bio</label><br>
+                <textarea name="textarea" id="textarea"></textarea>
+                <button>SUBMIT</button>
+            </form>
+        </div>
+    </center>
+    <script>
+        function redirectToPage() {
+            var selectElement = document.getElementById("pageSelect");
+            var selectedValue = selectElement.value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+       
+</body>
+</html>

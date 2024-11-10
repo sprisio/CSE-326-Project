@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Ball Game</title>
+    <link rel="stylesheet" href="ball.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="game_name">GAME.IO</div>
+            <div id="game_cont">
+                <h2>Games: </h2>
+                <select id="pageSelect" onchange="redirectToPage()">
+                    <option value="">Select a game </option>
+                    <option value="index.html">Memory puzzle</option>
+                    <option value="mole.html">Whack-a-Mole</option>
+                    <option value="ball.html">Catch the ball</option>
+                    
+                </select>
+                
+            </div>
+            <div id="about">
+            <a href="about.html">about </a>
+            </div>
+
+            <div id="contact">
+                <a href="contact.html">contact us</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="gameArea">
+        <div id="line"></div>
+        <div id="bucket"></div>
+        <div id="scoreBoard">Score: 0</div>
+        <button id="resetButton">Reset Game</button>
+    </div>
+
+    <script src="ball.js"></script>
+</body>
+</html>
