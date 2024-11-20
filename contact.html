@@ -225,6 +225,84 @@ button:hover{
                 window.location.href = selectedValue;
             }
         }
+        // Real-time input validation function
+function validateInput(event) {
+    const target = event.target;
+
+    if (target.id === "name") {
+        // Allow only letters, spaces, and basic characters for names
+        const nameRegex = /^[a-zA-Z\s]*$/;
+        if (!nameRegex.test(target.value)) {
+            target.value = target.value.replace(/[^a-zA-Z\s]/g, ""); // Remove invalid characters
+        }
+    } else if (target.id === "email") {
+        // Allow valid email characters only
+        const emailRegex = /^[a-zA-Z0-9@._-]*$/;
+        if (!emailRegex.test(target.value)) {
+            target.value = target.value.replace(/[^a-zA-Z0-9@._-]/g, ""); // Remove invalid characters
+        }
+    } else if (target.id === "password") {
+        // Restrict password to alphanumeric and special characters
+        const passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+]*$/;
+        if (!passwordRegex.test(target.value)) {
+            target.value = target.value.replace(/[^a-zA-Z0-9!@#$%^&*()_+]/g, ""); // Remove invalid characters
+        }
+    } else if (target.id === "bio") {
+        // Allow basic characters and punctuation in bio
+        const bioRegex = /^[a-zA-Z0-9\s.,'";?!-]*$/;
+        if (!bioRegex.test(target.value)) {
+            target.value = target.value.replace(/[^a-zA-Z0-9\s.,'";?!-]/g, ""); // Remove invalid characters
+        }
+    }
+}
+
+// Final form validation function on submit
+function validateForm(event) {
+    event.preventDefault();
+
+    // Get form elements
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const gender = document.getElementById("gender").value;
+    const bio = document.getElementById("bio").value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validate each field
+    if (name === "" || !/^[a-zA-Z\s]+$/.test(name)) {
+        alert("Name is required and should only contain letters.");
+        return;
+    }
+    if (email === "" || !emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    if (password === "") {
+        alert("Password is required.");
+        return;
+    }
+    if (gender === "Select") {
+        alert("Please select your gender.");
+        return;
+    }
+    if (bio === "") {
+        alert("Bio cannot be empty.");
+        return;
+    }
+
+    alert("Form submitted successfully!");
+    // Optionally submit the form here
+    // document.getElementById("contactForm").submit();
+}
+
+// Attach input validation and form validation events
+document.getElementById("contactForm").addEventListener("submit", validateForm);
+document.getElementById("name").addEventListener("input", validateInput);
+document.getElementById("email").addEventListener("input", validateInput);
+document.getElementById("password").addEventListener("input", validateInput);
+document.getElementById("bio").addEventListener("input", validateInput);
+
     </script>
        
 </body>
